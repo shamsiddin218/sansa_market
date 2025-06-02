@@ -1,0 +1,1463 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.navparent {
+  width: 100%;
+  background-color: rgb(241, 253, 223);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 223;
+}
+.navparent .navbar {
+  max-width: 1280px;
+  margin: auto;
+  padding: 12px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navparent .navbar img {
+  cursor: pointer;
+}
+.navparent .navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+.navparent .navbar ul li {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.navparent .navbar ul li:hover {
+  color: rgb(138, 199, 50);
+}
+.navparent .navbar .btnbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+}
+.navparent .navbar .btnbox .cart-count {
+  color: white;
+  background-color: rgb(186, 26, 26);
+  position: absolute;
+  z-index: 20;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  top: -10px;
+  right: 35px;
+}
+.navparent .navbar .btnbox .likecha {
+  position: relative;
+  cursor: pointer;
+}
+.navparent .navbar .btnbox .likecha::after {
+  content: attr(data-count);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 20px;
+  z-index: 30;
+}
+.navparent .navbar .btnbox .likecha[data-count]:not([data-count="0"])::after {
+  display: flex;
+  z-index: 30;
+}
+
+.homeparent {
+  width: 100%;
+  margin-top: 65px;
+}
+.homeparent .homebox {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 95px;
+  padding: 60px 0px;
+}
+.homeparent .homebox .leftcard {
+  width: 609px;
+}
+.homeparent .homebox .leftcard h2 {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 16px;
+}
+.homeparent .homebox .leftcard p {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 24px;
+  line-height: 36px;
+}
+.homeparent .homebox .leftcard .btns {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+.homeparent .homebox .leftcard .btns button:nth-child(1) {
+  padding: 10px 24px;
+  background-color: rgb(138, 199, 50);
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.homeparent .homebox .leftcard .btns button:nth-child(1):hover {
+  background-color: rgb(115, 163, 48);
+}
+.homeparent .homebox .leftcard .btns button:nth-child(2) {
+  padding: 10px 24px;
+  background-color: transparent;
+  border: solid 1px rgb(106, 108, 104);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(138, 199, 50);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.homeparent .homebox .leftcard .btns button:nth-child(2):hover {
+  background-color: rgb(244, 243, 243);
+}
+.homeparent .homebox .rightcard {
+  width: 457px;
+  overflow: hidden;
+}
+
+.asd {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  text-align: center;
+}
+
+.linear {
+  width: 305px;
+  height: 1px;
+  background-color: rgb(138, 199, 50);
+  margin: auto;
+  margin-bottom: 48px;
+}
+
+.firstboxparent {
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+}
+.firstboxparent .firstbox {
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 0px;
+}
+.firstboxparent .firstbox .firstboxcard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+.firstboxparent .firstbox .firstboxcard .childcard {
+  width: 308px;
+  border: solid 1px rgb(179, 183, 177);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.firstboxparent .firstbox .firstboxcard .childcard:hover {
+  box-shadow: 0px 5px 10px rgb(197, 200, 185);
+}
+.firstboxparent .firstbox .firstboxcard .childcard img {
+  margin-bottom: 24px;
+}
+.firstboxparent .firstbox .firstboxcard .childcard h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: rgb(16, 17, 16);
+  margin-bottom: 12px;
+}
+.firstboxparent .firstbox .firstboxcard .childcard p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+}
+
+.secondboxparent {
+  width: 100%;
+}
+.secondboxparent .secondbox {
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.secondboxparent .secondbox .secondcard {
+  width: 490px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+.secondboxparent .secondbox .secondcard swiper-slide {
+  width: 490px !important;
+}
+.secondboxparent .secondbox .secondcard .secondchild {
+  width: 490px;
+  border: solid 1px rgb(218, 223, 216);
+  border-radius: 8px;
+  padding: 24px;
+}
+.secondboxparent .secondbox .secondcard .secondchild .usersbox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 31px;
+  margin-bottom: 28px;
+}
+.secondboxparent .secondbox .secondcard .secondchild .usersbox .desc h4 {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 10px;
+}
+.secondboxparent .secondbox .secondcard .secondchild .usersbox .desc p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+}
+.secondboxparent .secondbox .secondcard .secondchild .usersbox .desc p span {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+}
+.secondboxparent .secondbox .secondcard .secondchild .dfg {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(41, 42, 40);
+  line-height: 24px;
+  margin-bottom: 28px;
+}
+
+.thirdboxparent {
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+}
+.thirdboxparent .thirdbox {
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 0px;
+}
+.thirdboxparent .thirdbox .thirdcard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 81px;
+}
+.thirdboxparent .thirdbox .thirdcard .thirdchilds {
+  padding: 24px;
+  border: solid 1px rgb(197, 200, 185);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.thirdboxparent .thirdbox .thirdcard .thirdchilds:hover {
+  box-shadow: 0px 5px 10px rgb(197, 200, 185);
+}
+.thirdboxparent .thirdbox .thirdcard .thirdchilds h6 {
+  font-size: 57px;
+  font-weight: 700;
+  color: rgb(138, 199, 50);
+  margin-bottom: 8px;
+}
+.thirdboxparent .thirdbox .thirdcard .thirdchilds p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(141, 145, 140);
+}
+
+.fourthboxparent {
+  width: 100%;
+}
+.fourthboxparent .fourtbox {
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 0px;
+  overflow: hidden;
+}
+.fourthboxparent .fourtbox .filterscard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  margin-bottom: 60px;
+}
+.fourthboxparent .fourtbox .filterscard .line {
+  width: 383px;
+  height: 4px;
+  background-color: rgb(138, 199, 50);
+  border-radius: 30px;
+}
+.fourthboxparent .fourtbox .filterscard .btnscard {
+  width: 223px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  border: solid 1px rgb(218, 223, 216);
+  border-radius: 8px;
+}
+.fourthboxparent .fourtbox .filterscard .btnscard button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fourthboxparent .fourtbox .filterscard .btnscard button.active {
+  background-color: rgb(138, 199, 50);
+  color: white;
+}
+.fourthboxparent .fourtbox .clothingparent {
+  width: 100%;
+}
+.fourthboxparent .fourtbox .clothingparent .seecloth {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(138, 199, 50);
+  margin-bottom: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard {
+  width: 308px;
+  border: solid 1px rgb(198, 198, 198);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard:hover {
+  box-shadow: 0px 2px 5px rgb(198, 198, 198);
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .like {
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  z-index: 10;
+  filter: none;
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .like.liked {
+  filter: drop-shadow(0 0 3px red) saturate(2) brightness(1.2);
+  /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .cloth {
+  margin-bottom: 24px;
+  width: 260px;
+  height: 260px;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard h4 {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 12px;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 12px;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .add span {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(16, 17, 16);
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .add img {
+  transition: all 0.2s;
+}
+.fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .add img:hover {
+  filter: drop-shadow(0px 0px 5px rgb(138, 199, 50));
+}
+.fourthboxparent .fourtbox .shoesparent {
+  width: 100%;
+}
+.fourthboxparent .fourtbox .shoesparent .seecloth {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(138, 199, 50);
+  margin-bottom: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard {
+  width: 308px;
+  border: solid 1px rgb(198, 198, 198);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard:hover {
+  box-shadow: 0px 2px 5px rgb(198, 198, 198);
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .like {
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  z-index: 10;
+  filter: none;
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .like.liked {
+  filter: drop-shadow(0 0 3px red) saturate(2) brightness(1.2);
+  /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .cloth {
+  margin-bottom: 24px;
+  width: 260px;
+  height: 260px;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard h4 {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 12px;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 12px;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .add span {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(16, 17, 16);
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .add img {
+  transition: all 0.2s;
+}
+.fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .add img:hover {
+  filter: drop-shadow(0px 0px 5px rgb(138, 199, 50));
+}
+
+.fifthboxparent {
+  width: 100%;
+}
+.fifthboxparent .fifthbox {
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 0px;
+}
+.fifthboxparent .fifthbox .discountproducts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts {
+  width: 308px;
+  border: solid 1px rgb(198, 198, 198);
+  border-radius: 8px;
+  background-color: white;
+  padding: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts:hover {
+  box-shadow: 0px 2px 5px rgb(198, 198, 198);
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .disc {
+  border: none;
+  padding: 10px;
+  border-radius: 29px;
+  background-color: rgb(138, 199, 50);
+  display: flex;
+  justify-self: start;
+  justify-content: center;
+  align-items: center;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .disc .discountp {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0px;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .like {
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  z-index: 10;
+  cursor: pointer;
+  filter: none;
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .like.liked {
+  filter: drop-shadow(0 0 3px red) saturate(2) brightness(1.2);
+  /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .cloth {
+  margin-bottom: 24px;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts h4 {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 12px;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 12px;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .add h6 {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(16, 17, 16);
+}
+.fifthboxparent .fifthbox .discountproducts .discounts .add h6 span {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(141, 145, 140);
+  text-decoration: line-through;
+}
+
+.allclothingparent {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.allclothingparent .backbtn {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(138, 199, 50);
+  margin-bottom: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.allclothingparent .clothingbox {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 308px);
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+.allclothingparent .clothingbox .clothingcard {
+  width: 308px;
+  border: solid 1px rgb(198, 198, 198);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.allclothingparent .clothingbox .clothingcard:hover {
+  box-shadow: 0px 2px 5px rgb(198, 198, 198);
+}
+.allclothingparent .clothingbox .clothingcard .like {
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  z-index: 2;
+}
+.allclothingparent .clothingbox .clothingcard .like .like {
+  filter: none;
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+.allclothingparent .clothingbox .clothingcard .like .like.liked {
+  filter: drop-shadow(0 0 5px red) saturate(2) brightness(1.2);
+  /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+}
+.allclothingparent .clothingbox .clothingcard .cloth {
+  margin-bottom: 24px;
+  width: 260px;
+  height: 260px;
+}
+.allclothingparent .clothingbox .clothingcard h4 {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 12px;
+}
+.allclothingparent .clothingbox .clothingcard p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 12px;
+}
+.allclothingparent .clothingbox .clothingcard .add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.allclothingparent .clothingbox .clothingcard .add span {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(16, 17, 16);
+}
+.allclothingparent .clothingbox .clothingcard .add img {
+  transition: all 0.2s;
+}
+.allclothingparent .clothingbox .clothingcard .add img:hover {
+  filter: drop-shadow(0px 0px 5px rgb(138, 199, 50));
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+}
+footer .footerpage {
+  max-width: 1280px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  align-items: start;
+  padding: 40px 20px;
+}
+footer .footerpage .footercards h4 {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 16px;
+}
+footer .footerpage .footercards p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+}
+footer .footerpage .footercards .gridscard {
+  display: grid;
+  grid-template-columns: repeat(4, 35px);
+  gap: 6px;
+}
+
+.shop {
+  margin-top: 85px !important;
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  display: none;
+}
+.shop .leftcard {
+  width: 775px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 0px;
+}
+.shop .leftcard .homeimgbox {
+  width: 412px;
+  margin-bottom: 69px;
+  overflow: hidden;
+}
+.shop .leftcard .homeimgbox img {
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.1s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shop .leftcard .homeimgbox img:hover {
+  transform: scale(1.1);
+}
+.shop .leftcard .smalimgbox {
+  width: 520px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop .leftcard .smalimgbox .smallimg {
+  width: 76px;
+  height: 76px;
+  border: solid 1px rgb(225, 228, 213);
+  border-radius: 8px;
+}
+.shop .leftcard .smalimgbox .smallimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shop .rightcard {
+  width: 440px;
+}
+.shop .rightcard h3 {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 16px;
+}
+.shop .rightcard p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+  margin-bottom: 16px;
+}
+.shop .rightcard .yulduz {
+  margin-bottom: 32px;
+}
+.shop .rightcard .narx {
+  font-size: 36px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+  margin-bottom: 28px;
+}
+.shop .rightcard .span {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+  margin-bottom: 12px;
+}
+.shop .rightcard .kupaytiradigan {
+  width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+  border: solid 1px rgb(225, 228, 213);
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+.shop .rightcard .kupaytiradigan h6 {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(72, 74, 71);
+}
+.shop .rightcard .kupaytiradigan .butbox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+}
+.shop .rightcard .kupaytiradigan .butbox button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: rgb(229, 229, 229);
+}
+.shop .rightcard .kupaytiradigan .butbox h6 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+.shop .rightcard .ad {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+.shop .rightcard .ad .addtocard {
+  padding: 14px 104px;
+  background-color: rgb(138, 199, 50);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+.shop .rightcard .ad .addtocard:hover {
+  background-color: rgb(90, 134, 28);
+}
+
+.shoppingbag {
+  max-width: 1280px;
+  margin: auto;
+  display: none;
+  margin-bottom: 30px;
+}
+.shoppingbag h2 {
+  font-size: 28px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  margin-bottom: 113px;
+  text-align: start;
+}
+.shoppingbag .boxs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.shoppingbag .leftbox {
+  width: 775px;
+  padding: 24px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 24px;
+}
+.shoppingbag .leftbox .leftchilds {
+  width: 727px;
+  border: solid 1px rgb(225, 228, 213);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 34px;
+  margin-bottom: 18px;
+}
+.shoppingbag .leftbox .leftchilds img {
+  width: 130px;
+  height: 130px;
+}
+.shoppingbag .leftbox .leftchilds .description h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(16, 17, 16);
+  margin-bottom: 12px;
+}
+.shoppingbag .leftbox .leftchilds .description h3 .narxi {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(16, 17, 16);
+}
+.shoppingbag .leftbox .leftchilds .description p {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(41, 42, 40);
+}
+.shoppingbag .leftbox .leftchilds h6 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  color: rgb(186, 26, 26);
+  cursor: pointer;
+}
+.shoppingbag .rightbox {
+  width: 489px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 24px;
+  padding: 32px 36px;
+}
+.shoppingbag .rightbox h2 {
+  margin-bottom: 31px;
+}
+.shoppingbag .rightbox .subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.shoppingbag .rightbox .subtotal h6 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+}
+.shoppingbag .rightbox .subtotal p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.shoppingbag .rightbox .shipping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.shoppingbag .rightbox .shipping h6 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+}
+.shoppingbag .rightbox .shipping p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.shoppingbag .rightbox hr {
+  margin-bottom: 24px;
+}
+.shoppingbag .rightbox .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 43px;
+}
+.shoppingbag .rightbox .total h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+}
+.shoppingbag .rightbox .total p {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+.shoppingbag .rightbox button {
+  padding: 14px 174px;
+  background-color: rgb(138, 199, 50);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+.shoppingbag .rightbox button:hover {
+  background-color: rgb(90, 134, 28);
+}
+
+@media (max-width: 1050px) {
+  .navbar {
+    max-width: 1000px;
+    margin: auto;
+    justify-content: space-between !important;
+    padding: 12px 20px !important;
+  }
+  .navbar ul {
+    gap: 15px !important;
+  }
+  .navbar ul li {
+    font-size: 14px !important;
+  }
+  .homeparent .homebox {
+    max-width: 1000px;
+    margin: auto;
+  }
+  .homeparent .homebox .leftcard {
+    width: 500px;
+  }
+  .homeparent .homebox .leftcard h2 {
+    font-size: 25px;
+  }
+  .homeparent .homebox .leftcard p {
+    font-size: 15px;
+  }
+  .homeparent .homebox .leftcard .btns {
+    gap: 10px;
+  }
+  .homeparent .homebox .leftcard .btns button {
+    padding: 7px 18px !important;
+    font-size: 12px !important;
+  }
+  .homeparent .homebox .rightcard {
+    width: 300px;
+  }
+  .homeparent .homebox .rightcard img {
+    width: 100%;
+  }
+  .firstboxparent .firstbox {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px 10px;
+  }
+  .firstboxparent .firstbox h3 {
+    font-size: 20px !important;
+  }
+  .firstboxparent .firstbox .firstboxcard {
+    justify-content: space-between;
+  }
+  .firstboxparent .firstbox .firstboxcard .childcard {
+    width: 250px;
+    padding: 10px;
+  }
+  .firstboxparent .firstbox .firstboxcard .childcard img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .firstboxparent .firstbox .firstboxcard .childcard h4 {
+    font-size: 20px !important;
+  }
+  .firstboxparent .firstbox .firstboxcard .childcard p {
+    font-size: 13px;
+  }
+  .fourthboxparent {
+    margin-top: 20px;
+  }
+  .fourthboxparent .fourtbox {
+    max-width: 1000px !important;
+    margin: auto;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+  }
+  .fourthboxparent .fourtbox .clothingparent {
+    width: 100% !important;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox {
+    width: 100% !important;
+    justify-content: space-between;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard {
+    width: 250px !important;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .cloth {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard h4 {
+    font-size: 20px !important;
+    margin-bottom: 8px !important;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard p {
+    font-size: 15px;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .add h6 {
+    font-size: 15px !important;
+  }
+  .fourthboxparent .fourtbox .clothingparent .clothingbox .clothingcard .add h6 .span {
+    font-size: 12px;
+  }
+  .fourthboxparent .fourtbox .shoesparent {
+    width: 100% !important;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox {
+    width: 100% !important;
+    justify-content: space-between;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard {
+    width: 250px !important;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .cloth {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard h4 {
+    font-size: 20px !important;
+    margin-bottom: 8px !important;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard p {
+    font-size: 15px;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .add h6 {
+    font-size: 15px !important;
+  }
+  .fourthboxparent .fourtbox .shoesparent .shoesbox .shoescard .add h6 .span {
+    font-size: 12px;
+  }
+  .fifthboxparent {
+    width: 100% !important;
+  }
+  .fifthboxparent .fifthbox {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  .fifthboxparent .fifthbox .discountproducts {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  .fifthboxparent .fifthbox .discountproducts .discounts {
+    width: 250px;
+    padding: 14px;
+  }
+  .fifthboxparent .fifthbox .discountproducts .discounts .cloth {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .fifthboxparent .fifthbox .discountproducts .discounts h4 {
+    font-size: 20px !important;
+    margin-bottom: 8px !important;
+  }
+  .fifthboxparent .fifthbox .discountproducts .discounts p {
+    font-size: 15px;
+  }
+  .fifthboxparent .fifthbox .discountproducts .discounts .add h6 {
+    font-size: 15px !important;
+  }
+  .fifthboxparent .fifthbox .discountproducts .discounts .add h6 .span {
+    font-size: 12px;
+  }
+  .allclothingparent {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 85px;
+    margin-bottom: 24px;
+  }
+  .allclothingparent .clothingbox {
+    width: 100% !important;
+    justify-content: space-between;
+  }
+  .allclothingparent .clothingbox .clothingcard {
+    width: 250px !important;
+  }
+  .allclothingparent .clothingbox .clothingcard .cloth {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .allclothingparent .clothingbox .clothingcard h4 {
+    font-size: 20px !important;
+    margin-bottom: 8px !important;
+  }
+  .allclothingparent .clothingbox .clothingcard p {
+    font-size: 15px;
+  }
+  .allclothingparent .clothingbox .clothingcard .add h6 {
+    font-size: 15px !important;
+  }
+  .allclothingparent .clothingbox .clothingcard .add h6 .span {
+    font-size: 12px;
+  }
+  .shop {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .shop .leftcard {
+    margin-bottom: 24px;
+  }
+  .shoppingbag {
+    max-width: 1000px;
+    margin: auto;
+  }
+  .shoppingbag .boxs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .shoppingbag .leftbox {
+    width: 500px;
+    margin-bottom: 24px;
+  }
+  .shoppingbag .leftbox .leftchilds {
+    width: 100%;
+  }
+}
+@media (max-width: 890px) {
+  .homeparent .homebox {
+    max-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .homeparent .homebox .leftcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    order: 2;
+  }
+  .thirdboxparent .thirdbox {
+    max-width: 800px;
+  }
+  .thirdboxparent .thirdbox .thirdcard {
+    width: 100%;
+  }
+  .thirdboxparent .thirdbox .thirdcard .thirdchilds {
+    padding: 15px;
+  }
+  .thirdboxparent .thirdbox .thirdcard .thirdchilds h6 {
+    font-size: 30px;
+  }
+  .allclothingparent .clothingbox {
+    max-width: 800px;
+    margin: auto;
+    grid-template-columns: repeat(2, 250px);
+    justify-content: center;
+    align-items: center;
+  }
+  .shop {
+    max-width: 800px !important;
+  }
+  .shop .leftcard {
+    width: 500px !important;
+  }
+  .shop .leftcard img {
+    width: 100%;
+    height: 100%;
+  }
+  .shop .leftcard .smalimgbox {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .shop .rightcard {
+    text-align: center;
+  }
+  .shop .rightcard h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .shop .rightcard .yulduz {
+    margin-bottom: 10px;
+  }
+  footer .footerpage {
+    max-width: 800px;
+    grid-template-columns: repeat(2, 150px) !important;
+    justify-content: space-evenly;
+    gap: 50px;
+  }
+}
+@media (max-width: 650px) {
+  .homeparent {
+    margin-top: 80px;
+  }
+  .navparent .navbar {
+    max-width: 600px;
+    margin: auto;
+    flex-direction: column;
+  }
+  .navparent .navbar ul {
+    margin-bottom: 10px;
+  }
+  .firstboxparent {
+    width: 100%;
+  }
+  .firstboxparent .firstbox {
+    max-width: 600px;
+  }
+  .firstboxparent .firstbox .firstboxcard {
+    flex-direction: column;
+  }
+  .fourtbox {
+    max-width: 600px;
+  }
+  .fourtbox .clothingparent {
+    width: 100%;
+  }
+  .fourtbox .clothingparent .clothingbox {
+    flex-direction: column;
+  }
+  .fourtbox .shoesparent .shoesbox {
+    flex-direction: column;
+  }
+  .allclothingparent {
+    margin-top: 150px;
+  }
+  .discountproducts {
+    flex-direction: column !important;
+  }
+}
+@media (max-width: 400px) {
+  .navbar ul li {
+    font-size: 10px !important;
+  }
+  .homeparent .homebox {
+    max-width: 350px !important;
+  }
+  .homeparent .homebox .rightcard {
+    width: 330px;
+    margin-bottom: 10px !important;
+  }
+  .homeparent .homebox .rightcard img {
+    width: 100%;
+  }
+  .homeparent .homebox .leftcard {
+    width: 330px;
+  }
+  .homeparent .homebox .leftcard p {
+    font-size: 13px !important;
+  }
+  .thirdboxparent .thirdbox {
+    max-width: 350px !important;
+  }
+  .thirdboxparent .thirdbox .thirdcard {
+    flex-direction: column !important;
+    gap: 15px;
+  }
+  .secondboxparent .secondbox {
+    max-width: 350px;
+  }
+  .secondboxparent .secondbox .secondcard {
+    width: 330px;
+  }
+  .secondboxparent .secondbox .secondcard swiper-slide {
+    width: 330px !important;
+  }
+  .secondboxparent .secondbox .secondcard .secondchild {
+    width: 100%;
+  }
+  .secondboxparent .secondbox .secondcard .secondchild p {
+    font-size: 12px !important;
+  }
+  .allclothingparent {
+    max-width: 350px;
+  }
+  .allclothingparent .clothingbox {
+    width: 100%;
+    align-items: center;
+    grid-template-columns: repeat(1, 200px) !important;
+  }
+  .shop {
+    max-width: 350px;
+  }
+  .shop .leftcard {
+    width: 300px !important;
+  }
+  .shop .leftcard .homeimgbox {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+  .shop .leftcard .smalimgbox {
+    width: 300px;
+  }
+  .shop .leftcard .smalimgbox .smallimg {
+    width: 50px;
+    height: 50px;
+  }
+  .shop .rightcard {
+    width: 300px;
+  }
+  .shop .rightcard h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .shop .rightcard p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .shop .rightcard .narx {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shop .rightcard .kupaytiradigan {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  .shop .rightcard .addtocard {
+    padding: 10px 70px !important;
+    font-size: 12px !important;
+  }
+  .shoppingbag {
+    max-width: 350px;
+    margin: auto;
+  }
+  .shoppingbag .leftbox {
+    width: 300px;
+  }
+  .shoppingbag .leftbox .leftchilds {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .shoppingbag .rightbox {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  .shoppingbag .rightbox h2 {
+    font-size: 18px;
+  }
+  .shoppingbag .rightbox button {
+    padding: 10px 70px;
+  }
+  footer .footerpage {
+    max-width: 350px;
+    margin: auto;
+    grid-template-columns: repeat(1, 1fr) !important;
+    align-items: center;
+  }
+}/*# sourceMappingURL=style.css.map */

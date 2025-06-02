@@ -1,0 +1,1754 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.navparent {
+    width: 100%;
+    background-color: rgba(241, 253, 223, 1);
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 223;
+
+    .navbar {
+        max-width: 1280px;
+        margin: auto;
+        padding: 12px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+
+            li {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(16, 17, 16, 1);
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    color: rgba(138, 199, 50, 1);
+                }
+            }
+        }
+
+
+        .btnbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            position: relative;
+
+            .cart-count {
+                color: white;
+                background-color: rgba(186, 26, 26, 1);
+                position: absolute;
+                z-index: 20;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                top: -10px;
+                right: 35px;
+            }
+
+            .likecha {
+                position: relative;
+                cursor: pointer;
+
+                &::after {
+                    content: attr(data-count); // data-count qiymatini chiqaradi
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    background: red;
+                    color: white;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    border-radius: 50%;
+                    display: none; // Avval yashirin
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    line-height: 20px;
+                    z-index: 30;
+                }
+
+                &[data-count]:not([data-count="0"])::after {
+                    display: flex; // 0 bo‘lmaganda ko‘rsatadi
+                    z-index: 30;
+                }
+            }
+
+        }
+    }
+}
+
+.homeparent {
+    width: 100%;
+    margin-top: 65px;
+
+    .homebox {
+        max-width: 1280px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 95px;
+        padding: 60px 0px;
+
+        .leftcard {
+            width: 609px;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 400;
+                color: rgba(16, 17, 16, 1);
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: 400;
+                color: rgba(72, 74, 71, 1);
+                margin-bottom: 24px;
+                line-height: 36px;
+            }
+
+            .btns {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 16px;
+
+                button:nth-child(1) {
+                    padding: 10px 24px;
+                    background-color: rgba(138, 199, 50, 1);
+                    border: none;
+                    border-radius: 100px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, 1);
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        background-color: rgb(115, 163, 48);
+                    }
+                }
+
+                button:nth-child(2) {
+                    padding: 10px 24px;
+                    background-color: transparent;
+                    border: solid 1px rgba(106, 108, 104, 1);
+                    border-radius: 100px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: rgba(138, 199, 50, 1);
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        background-color: rgb(244, 243, 243);
+                    }
+                }
+            }
+        }
+
+        .rightcard {
+            width: 457px;
+            overflow: hidden;
+        }
+    }
+}
+
+.asd {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(16, 17, 16, 1);
+    text-align: center;
+}
+
+.linear {
+    width: 305px;
+    height: 1px;
+    background-color: rgba(138, 199, 50, 1);
+    margin: auto;
+    margin-bottom: 48px;
+}
+
+.firstboxparent {
+    width: 100%;
+    background-color: rgba(243, 243, 243, 1);
+
+    .firstbox {
+        max-width: 1280px;
+        margin: auto;
+        padding: 60px 0px;
+
+        .firstboxcard {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+
+            .childcard {
+                width: 308px;
+                border: solid 1px rgba(179, 183, 177, 1);
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 15px;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    box-shadow: 0px 5px 10px rgba(197, 200, 185, 1);
+                }
+
+                img {
+                    margin-bottom: 24px;
+                }
+
+                h4 {
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: rgba(16, 17, 16, 1);
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(72, 74, 71, 1);
+                }
+            }
+        }
+    }
+}
+
+.secondboxparent {
+    width: 100%;
+
+
+    .secondbox {
+        max-width: 1280px;
+        margin: auto;
+        padding: 60px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .secondcard {
+            width: 490px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+
+            swiper-slide {
+                width: 490px !important;
+            }
+
+            .secondchild {
+                width: 490px;
+                border: solid 1px rgba(218, 223, 216, 1);
+                border-radius: 8px;
+                padding: 24px;
+
+                .usersbox {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    gap: 31px;
+                    margin-bottom: 28px;
+
+                    .desc {
+                        h4 {
+                            font-size: 22px;
+                            font-weight: 400;
+                            color: rgba(16, 17, 16, 1);
+                            margin-bottom: 10px;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: rgba(72, 74, 71, 1);
+
+                            span {
+                                font-size: 12px;
+                                font-weight: 400;
+                                color: rgba(72, 74, 71, 1);
+                            }
+                        }
+                    }
+                }
+
+                .dfg {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(41, 42, 40, 1);
+                    line-height: 24px;
+                    margin-bottom: 28px;
+                }
+            }
+        }
+    }
+}
+
+.thirdboxparent {
+    width: 100%;
+    background-color: rgba(243, 243, 243, 1);
+
+    .thirdbox {
+        max-width: 1280px;
+        margin: auto;
+        padding: 60px 0px;
+
+        .thirdcard {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 81px;
+
+            .thirdchilds {
+                padding: 24px;
+                border: solid 1px rgba(197, 200, 185, 1);
+                border-radius: 12px;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    box-shadow: 0px 5px 10px rgba(197, 200, 185, 1);
+                }
+
+                h6 {
+                    font-size: 57px;
+                    font-weight: 700;
+                    color: rgba(138, 199, 50, 1);
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(141, 145, 140, 1);
+                }
+            }
+        }
+    }
+}
+
+.fourthboxparent {
+    width: 100%;
+
+    .fourtbox {
+        max-width: 1280px;
+        margin: auto;
+        padding: 60px 0px;
+        overflow: hidden;
+
+        .filterscard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 23px;
+            margin-bottom: 60px;
+
+            .line {
+                width: 383px;
+                height: 4px;
+                background-color: rgba(138, 199, 50, 1);
+                border-radius: 30px;
+            }
+
+            .btnscard {
+                width: 223px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 6px;
+                border: solid 1px rgba(218, 223, 216, 1);
+                border-radius: 8px;
+
+                button {
+                    padding: 10px 16px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(0, 0, 0, 1);
+                    background-color: transparent;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+
+                button.active {
+                    background-color: rgba(138, 199, 50, 1);
+                    color: white;
+                }
+            }
+        }
+
+        .clothingparent {
+            width: 100%;
+
+            .seecloth {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(138, 199, 50, 1);
+                margin-bottom: 24px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+            .clothingbox {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 56px;
+
+                .clothingcard {
+                    width: 308px;
+                    border: solid 1px rgba(198, 198, 198, 1);
+                    border-radius: 8px;
+                    padding: 24px;
+                    position: relative;
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        box-shadow: 0px 2px 5px rgba(198, 198, 198, 1);
+                    }
+
+                    .like {
+                        position: absolute;
+                        right: 24px;
+                        top: 26px;
+                        z-index: 10;
+                        filter: none;
+                        cursor: pointer;
+                        transition: filter 0.1s ease;
+
+                        &.liked {
+                            filter: drop-shadow(0 0 3px red) saturate(2) brightness(1.2);
+                            /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+                        }
+                    }
+
+                    .cloth {
+                        margin-bottom: 24px;
+                        width: 260px;
+                        height: 260px;
+
+                    }
+
+                    h4 {
+                        font-size: 32px;
+                        font-weight: 400;
+                        color: rgba(16, 17, 16, 1);
+                        margin-bottom: 12px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: rgba(72, 74, 71, 1);
+                        margin-bottom: 12px;
+                    }
+
+                    .add {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        span {
+                            font-size: 20px;
+                            font-weight: 500;
+                            color: rgba(16, 17, 16, 1);
+                        }
+
+                        img {
+                            transition: all 0.2s;
+
+                            &:hover {
+                                filter: drop-shadow(0px 0px 5px rgba(138, 199, 50, 1));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .shoesparent {
+            width: 100%;
+
+            .seecloth {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(138, 199, 50, 1);
+                margin-bottom: 24px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+
+            .shoesbox {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 56px;
+
+                .shoescard {
+                    width: 308px;
+                    border: solid 1px rgba(198, 198, 198, 1);
+                    border-radius: 8px;
+                    padding: 24px;
+                    position: relative;
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        box-shadow: 0px 2px 5px rgba(198, 198, 198, 1);
+                    }
+
+                    .like {
+                        position: absolute;
+                        right: 24px;
+                        top: 26px;
+                        z-index: 10;
+                        filter: none;
+                        cursor: pointer;
+                        transition: filter 0.1s;
+
+                        &.liked {
+                            filter: drop-shadow(0 0 3px red) saturate(2) brightness(1.2);
+                            /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+                        }
+                    }
+
+                    .cloth {
+                        margin-bottom: 24px;
+                        width: 260px;
+                        height: 260px;
+
+                    }
+
+                    h4 {
+                        font-size: 32px;
+                        font-weight: 400;
+                        color: rgba(16, 17, 16, 1);
+                        margin-bottom: 12px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: rgba(72, 74, 71, 1);
+                        margin-bottom: 12px;
+                    }
+
+                    .add {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        span {
+                            font-size: 20px;
+                            font-weight: 500;
+                            color: rgba(16, 17, 16, 1);
+                        }
+
+                        img {
+                            transition: all 0.2s;
+
+                            &:hover {
+                                filter: drop-shadow(0px 0px 5px rgba(138, 199, 50, 1));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.fifthboxparent {
+    width: 100%;
+
+
+    .fifthbox {
+        max-width: 1280px;
+        margin: auto;
+        padding: 60px 0px;
+
+        .discountproducts {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+
+            .discounts {
+                width: 308px;
+                border: solid 1px rgba(198, 198, 198, 1);
+                border-radius: 8px;
+                background-color: white;
+                padding: 24px;
+                position: relative;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    box-shadow: 0px 2px 5px rgba(198, 198, 198, 1);
+                }
+
+                .disc {
+                    border: none;
+                    padding: 10px;
+                    border-radius: 29px;
+                    background-color: rgba(138, 199, 50, 1);
+                    display: flex;
+                    justify-self: start;
+                    justify-content: center;
+                    align-items: center;
+
+                    .discountp {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: white;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                .like {
+                    position: absolute;
+                    right: 24px;
+                    top: 26px;
+                    z-index: 10;
+                    cursor: pointer;
+
+
+                    filter: none;
+                    cursor: pointer;
+                    transition: filter 0.1s;
+
+                    &.liked {
+                        filter: drop-shadow(0 0 3px red) saturate(2) brightness(1.2);
+                        /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+                    }
+
+                }
+
+                .cloth {
+                    margin-bottom: 24px;
+                }
+
+                h4 {
+                    font-size: 32px;
+                    font-weight: 400;
+                    color: rgba(16, 17, 16, 1);
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(72, 74, 71, 1);
+                    margin-bottom: 12px;
+                }
+
+                .add {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+
+                    h6 {
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: rgba(16, 17, 16, 1);
+
+                        span {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: rgba(141, 145, 140, 1);
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.allclothingparent {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .backbtn {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(138, 199, 50, 1);
+        margin-bottom: 24px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .clothingbox {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 308px);
+        justify-content: center;
+        align-items: center;
+        gap: 56px;
+
+        .clothingcard {
+            width: 308px;
+            border: solid 1px rgba(198, 198, 198, 1);
+            border-radius: 8px;
+            padding: 24px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                box-shadow: 0px 2px 5px rgba(198, 198, 198, 1);
+            }
+
+            .like {
+                position: absolute;
+                right: 24px;
+                top: 26px;
+                z-index: 2;
+
+                .like {
+                    filter: none;
+                    cursor: pointer;
+                    transition: filter 0.1s ease;
+
+                    &.liked {
+                        filter: drop-shadow(0 0 5px red) saturate(2) brightness(1.2);
+                        /* yoki background-color: red; yoki color: red; — rasmga mos o‘zgartiring */
+                    }
+                }
+            }
+
+            .cloth {
+                margin-bottom: 24px;
+                width: 260px;
+                height: 260px;
+
+            }
+
+            h4 {
+                font-size: 32px;
+                font-weight: 400;
+                color: rgba(16, 17, 16, 1);
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(72, 74, 71, 1);
+                margin-bottom: 12px;
+            }
+
+            .add {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: rgba(16, 17, 16, 1);
+                }
+
+                img {
+                    transition: all 0.2s;
+
+                    &:hover {
+                        filter: drop-shadow(0px 0px 5px rgba(138, 199, 50, 1));
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(243, 243, 243, 1);
+
+    .footerpage {
+        max-width: 1280px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        justify-content: space-between;
+        align-items: start;
+
+        padding: 40px 20px;
+
+        .footercards {
+            h4 {
+                font-size: 22px;
+                font-weight: 400;
+                color: rgba(16, 17, 16, 1);
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(72, 74, 71, 1);
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .gridscard {
+                display: grid;
+                grid-template-columns: repeat(4, 35px);
+                gap: 6px;
+            }
+        }
+    }
+}
+
+.shop {
+    margin-top: 85px !important;
+    max-width: 1280px;
+    margin: auto;
+    padding: 60px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    display: none;
+
+    .leftcard {
+        width: 775px;
+        background-color: rgba(251, 251, 251, 1);
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 17px 0px;
+
+        .homeimgbox {
+            width: 412px;
+            margin-bottom: 69px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                cursor: pointer;
+                transition: all 0.1s;
+                object-fit: cover;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .smalimgbox {
+            width: 520px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .smallimg {
+                width: 76px;
+                height: 76px;
+                border: solid 1px rgba(225, 228, 213, 1);
+                border-radius: 8px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .rightcard {
+        width: 440px;
+
+        h3 {
+            font-size: 32px;
+            font-weight: 400;
+            color: rgba(16, 17, 16, 1);
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(72, 74, 71, 1);
+            margin-bottom: 16px;
+        }
+
+        .yulduz {
+            margin-bottom: 32px;
+        }
+
+        .narx {
+            font-size: 36px;
+            font-weight: 400;
+            color: rgba(16, 17, 16, 1);
+            margin-bottom: 28px;
+        }
+
+        .span {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(68, 72, 61, 1);
+            margin-bottom: 12px;
+        }
+
+        .kupaytiradigan {
+            width: 100%;
+            padding: 24px;
+            border-radius: 12px;
+            border: solid 1px rgba(225, 228, 213, 1);
+            margin-bottom: 28px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 8px;
+
+            h6 {
+                font-size: 12px;
+                font-weight: 400;
+                color: rgba(72, 74, 71, 1);
+            }
+
+            .butbox {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 12px;
+
+                button {
+                    width: 24px;
+                    height: 24px;
+                    border: none;
+                    border-radius: 50%;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(0, 0, 0, 1);
+                    cursor: pointer;
+                    background-color: rgba(229, 229, 229, 1);
+                }
+
+                h6 {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(0, 0, 0, 1);
+                }
+            }
+
+        }
+
+        .ad {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 16px;
+
+            .addtocard {
+                padding: 14px 104px;
+                background-color: rgba(138, 199, 50, 1);
+                color: white;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+                border: none;
+                border-radius: 100px;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: rgb(90, 134, 28);
+                }
+            }
+        }
+    }
+}
+
+.shoppingbag {
+    max-width: 1280px;
+    margin: auto;
+    display: none;
+    margin-bottom: 30px;
+
+    h2 {
+        font-size: 28px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 1);
+        margin-bottom: 113px;
+        text-align: start;
+    }
+
+    .boxs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .leftbox {
+        width: 775px;
+        padding: 24px;
+        background-color: rgba(251, 251, 251, 1);
+        border-radius: 24px;
+
+        .leftchilds {
+            width: 727px;
+            border: solid 1px rgba(225, 228, 213, 1);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            gap: 34px;
+            margin-bottom: 18px;
+
+            img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .description {
+                h3 {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: rgba(16, 17, 16, 1);
+                    margin-bottom: 12px;
+
+                    .narxi {
+                        font-size: 22px;
+                        font-weight: 400;
+                        color: rgba(16, 17, 16, 1);
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: rgba(41, 42, 40, 1);
+                }
+            }
+
+            h6 {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.4px;
+                text-decoration: underline;
+                text-decoration-style: solid;
+                text-decoration-thickness: 0%;
+                color: rgba(186, 26, 26, 1);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .rightbox {
+        width: 489px;
+        background-color: rgba(251, 251, 251, 1);
+        border-radius: 24px;
+        padding: 32px 36px;
+
+        h2 {
+            margin-bottom: 31px;
+        }
+
+        .subtotal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h6 {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(68, 72, 61, 1);
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.15px;
+
+            }
+
+            margin-bottom: 12px;
+        }
+
+        .shipping {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h6 {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(68, 72, 61, 1);
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.15px;
+
+            }
+
+            margin-bottom: 12px;
+        }
+
+        hr {
+            margin-bottom: 24px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 43px;
+
+            h3 {
+                font-size: 22px;
+                font-weight: 400;
+                color: rgba(68, 72, 61, 1);
+            }
+
+            p {
+
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0px;
+
+            }
+        }
+
+        button {
+            padding: 14px 174px;
+            background-color: rgba(138, 199, 50, 1);
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 100px;
+            transition: all 0.2s;
+
+            &:hover {
+                background-color: rgb(90, 134, 28);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+@media(max-width:1050px) {
+    .navbar {
+        max-width: 1000px;
+        margin: auto;
+        justify-content: space-between !important;
+        padding: 12px 20px !important;
+
+        ul {
+            gap: 15px !important;
+
+            li {
+                font-size: 14px !important;
+            }
+        }
+    }
+
+    .homeparent {
+        .homebox {
+            max-width: 1000px;
+            margin: auto;
+
+            .leftcard {
+                width: 500px;
+
+                h2 {
+                    font-size: 25px;
+                }
+
+                p {
+                    font-size: 15px;
+                }
+
+                .btns {
+                    gap: 10px;
+
+                    button {
+                        padding: 7px 18px !important;
+                        font-size: 12px !important;
+                    }
+                }
+            }
+
+            .rightcard {
+                width: 300px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .firstboxparent {
+        .firstbox {
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px 10px;
+
+            h3 {
+                font-size: 20px !important;
+            }
+
+            .firstboxcard {
+                justify-content: space-between;
+
+                .childcard {
+                    width: 250px;
+                    padding: 10px;
+
+                    img {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        font-size: 20px !important;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .fourthboxparent {
+        margin-top: 20px;
+
+        .fourtbox {
+            max-width: 1000px !important;
+            margin: auto;
+            padding: 0px 10px;
+            margin-bottom: 20px;
+
+            .clothingparent {
+                width: 100% !important;
+
+                .clothingbox {
+                    width: 100% !important;
+                    justify-content: space-between;
+
+                    .clothingcard {
+                        width: 250px !important;
+
+                        .cloth {
+                            width: 100% !important;
+                            height: 100% !important;
+                        }
+
+                        h4 {
+                            font-size: 20px !important;
+                            margin-bottom: 8px !important;
+                        }
+
+                        p {
+                            font-size: 15px;
+                        }
+
+                        .add {
+                            h6 {
+                                font-size: 15px !important;
+
+                                .span {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .shoesparent {
+                width: 100% !important;
+
+                .shoesbox {
+                    width: 100% !important;
+                    justify-content: space-between;
+
+                    .shoescard {
+                        width: 250px !important;
+
+                        .cloth {
+                            width: 100% !important;
+                            height: 100% !important;
+                        }
+
+                        h4 {
+                            font-size: 20px !important;
+                            margin-bottom: 8px !important;
+                        }
+
+                        p {
+                            font-size: 15px;
+                        }
+
+                        .add {
+                            h6 {
+                                font-size: 15px !important;
+
+                                .span {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .fifthboxparent {
+        width: 100% !important;
+
+        .fifthbox {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0px 10px;
+            margin-bottom: 10px;
+            margin-top: 15px;
+
+            .discountproducts {
+                width: 100% !important;
+                justify-content: space-between !important;
+
+                .discounts {
+                    width: 250px;
+                    padding: 14px;
+
+                    .cloth {
+                        width: 100%;
+                        height: 100%;
+                        margin-bottom: 10px;
+
+                    }
+
+                    h4 {
+                        font-size: 20px !important;
+                        margin-bottom: 8px !important;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+
+                    .add {
+                        h6 {
+                            font-size: 15px !important;
+
+                            .span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .allclothingparent {
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 85px;
+        margin-bottom: 24px;
+
+        .clothingbox {
+            width: 100% !important;
+            justify-content: space-between;
+
+            .clothingcard {
+                width: 250px !important;
+
+                .cloth {
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+
+                h4 {
+                    font-size: 20px !important;
+                    margin-bottom: 8px !important;
+                }
+
+                p {
+                    font-size: 15px;
+                }
+
+                .add {
+                    h6 {
+                        font-size: 15px !important;
+
+                        .span {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .shop {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .leftcard {
+            margin-bottom: 24px;
+        }
+
+    }
+
+    .shoppingbag {
+        max-width: 1000px;
+        margin: auto;
+
+        .boxs {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .leftbox {
+            width: 500px;
+            margin-bottom: 24px;
+
+            .leftchilds {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media(max-width:890px) {
+    .homeparent {
+        .homebox {
+            max-width: 800px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .leftcard {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                order: 2;
+            }
+        }
+    }
+
+    .thirdboxparent {
+        .thirdbox {
+            max-width: 800px;
+
+            .thirdcard {
+                width: 100%;
+
+                .thirdchilds {
+                    padding: 15px;
+                    h6{
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .allclothingparent{
+        .clothingbox{
+            max-width: 800px;
+            margin: auto;
+            grid-template-columns: repeat(2 , 250px);
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .shop{
+        max-width: 800px !important;
+        .leftcard{
+            width: 500px !important;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .smalimgbox{
+                justify-content: space-evenly;
+                width: 100%;
+            }
+        }
+        .rightcard{
+            text-align: center;
+            h3{
+                margin-bottom: 10px;
+                font-size: 24px
+            }
+            .yulduz{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    footer{
+        .footerpage{
+            max-width: 800px;
+            grid-template-columns: repeat(2 , 150px) !important;
+            justify-content: space-evenly;
+            gap: 50px;
+        }
+    }
+}
+
+@media(max-width:650px){
+    .homeparent{
+        margin-top: 80px;
+    }
+    .navparent{
+        .navbar{
+            max-width: 600px;
+            margin: auto;
+            flex-direction: column;
+            ul{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .firstboxparent{
+        width: 100%;
+        .firstbox{
+            max-width: 600px;
+            .firstboxcard{
+                flex-direction: column;
+            }
+        }
+    }
+    .fourtbox{
+        max-width: 600px;
+        .clothingparent{
+            width: 100%;
+            .clothingbox{
+                flex-direction: column;
+            }
+        }
+        .shoesparent{
+            .shoesbox{
+                flex-direction: column;
+            }
+        }
+    }
+    .allclothingparent{
+        margin-top: 150px;
+    }
+    .discountproducts{
+        flex-direction: column !important;
+    }
+}
+
+
+
+@media(max-width:400px){
+    .navbar{
+        ul{
+            li{
+                font-size: 10px !important;
+            }
+        }
+    }
+    .homeparent{
+        .homebox{
+            max-width: 350px !important;
+            .rightcard{
+                width: 330px;
+                img{
+                    width: 100%;
+                }
+                margin-bottom: 10px !important;
+            }
+            .leftcard{
+                width: 330px;
+                p{
+                    font-size: 13px !important;
+                }
+            }
+        }
+    }
+    .thirdboxparent{
+        .thirdbox{
+            max-width: 350px !important;
+            .thirdcard{
+                flex-direction: column !important;
+                gap: 15px;
+            }
+        }
+    }
+    .secondboxparent{
+        .secondbox{
+            max-width: 350px;
+            .secondcard{
+                width: 330px;
+                swiper-slide{
+                    width: 330px !important;
+                }
+                .secondchild{
+                    width: 100%;
+                    p{
+                        font-size: 12px !important;
+                    }
+                }
+            }
+        }
+    }
+    .allclothingparent{
+        max-width: 350px;
+        .clothingbox{
+            width: 100%;
+            align-items: center;
+            grid-template-columns: repeat(1 , 200px) !important;
+        }
+    }
+    .shop{
+        max-width: 350px;
+        .leftcard{
+            width: 300px !important;
+            .homeimgbox{
+                width: 300px;
+                margin-bottom: 10px;
+            }
+            .smalimgbox{
+                width: 300px;
+                .smallimg{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+        .rightcard{
+            width: 300px;
+            h3{
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            p{
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+            .narx{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .kupaytiradigan{
+                padding: 15px;
+                margin-bottom: 10px;
+            }
+            .addtocard{
+                padding: 10px 70px !important;
+                font-size: 12px !important;
+            }
+        }
+    }
+    .shoppingbag{
+        max-width: 350px;
+        margin: auto;
+        .leftbox{
+            width: 300px;
+            .leftchilds{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        .rightbox{
+            width: 300px;
+            margin-bottom: 20px;
+            h2{
+                font-size: 18px;
+            }
+            button{
+                padding: 10px 70px;
+            }
+        }
+    }
+    footer{
+        .footerpage{
+            max-width: 350px;
+            margin: auto;
+            grid-template-columns: repeat(1 , 1fr) !important   ;
+            align-items: center;
+        }
+    }
+}
