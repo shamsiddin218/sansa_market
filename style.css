@@ -995,7 +995,7 @@ footer .footerpage .footercards .gridscard {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 43px;
+  margin-bottom: 23px;
 }
 .shoppingbag .rightbox .total h3 {
   font-size: 22px;
@@ -1018,8 +1018,166 @@ footer .footerpage .footercards .gridscard {
   border: none;
   border-radius: 100px;
   transition: all 0.2s;
+  margin-bottom: 20px;
 }
 .shoppingbag .rightbox button:hover {
+  background-color: rgb(90, 134, 28);
+}
+.shoppingbag .rightbox input {
+  width: 100%;
+  padding: 10px;
+  border: solid 1px rgb(41, 42, 40);
+  border-radius: 8px;
+  outline: none;
+}
+
+.shoppingbagcard {
+  max-width: 1280px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.shoppingbagcard h2 {
+  font-size: 28px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  margin-bottom: 113px;
+  text-align: start;
+}
+.shoppingbagcard .boxs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.shoppingbagcard .leftbox {
+  width: 775px;
+  padding: 24px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 24px;
+}
+.shoppingbagcard .leftbox h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  margin-bottom: 24px;
+}
+.shoppingbagcard .leftbox .cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shoppingbagcard .leftbox .cards .cardschild {
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  border: solid 1px rgb(117, 121, 108);
+  border-radius: 4px;
+}
+.shoppingbagcard .rightbox {
+  width: 489px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 24px;
+  padding: 32px 36px;
+}
+.shoppingbagcard .rightbox h2 {
+  margin-bottom: 31px;
+}
+.shoppingbagcard .rightbox .subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.shoppingbagcard .rightbox .subtotal h6 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+}
+.shoppingbagcard .rightbox .subtotal p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.shoppingbagcard .rightbox .shipping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.shoppingbagcard .rightbox .shipping h6 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+}
+.shoppingbagcard .rightbox .shipping p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.shoppingbagcard .rightbox hr {
+  margin-bottom: 24px;
+}
+.shoppingbagcard .rightbox .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 43px;
+}
+.shoppingbagcard .rightbox .total h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(68, 72, 61);
+}
+.shoppingbagcard .rightbox .total p {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+.shoppingbagcard .rightbox button {
+  padding: 14px 150px;
+  background-color: rgb(138, 199, 50);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+.shoppingbagcard .rightbox button:hover {
+  background-color: rgb(90, 134, 28);
+}
+
+.modal {
+  margin: auto;
+  width: 414px;
+  padding: 32px;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px rgb(117, 121, 108);
+  box-shadow: 0px 0px 10px rgb(117, 121, 108);
+  border-radius: 24px;
+}
+.modal img {
+  margin-bottom: 10px;
+}
+.modal button {
+  padding: 14px 40px;
+  background-color: rgb(138, 199, 50);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+.modal button:hover {
   background-color: rgb(90, 134, 28);
 }
 

@@ -181,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     shop.style.display = "none";
     shoppingBag.style.display = "none";
+    
   });
   
 });
@@ -291,7 +292,7 @@ shoppingBag.style.display = "none";
 cartIcon.addEventListener("click", () => {
   if (shoppingBag.style.display === "none") {
     shoppingBag.style.display = "block";
-    document.querySelectorAll(".homeparent, .firstboxparent, .secondboxparent, .thirdboxparent, .fourthboxparent, .fifthboxparent, .allclothingparent").forEach(el => el.style.display = 'none');
+    document.querySelectorAll(".homeparent, .firstboxparent, .secondboxparent, .thirdboxparent, .fourthboxparent, .fifthboxparent, .allclothingparent, .modal").forEach(el => el.style.display = 'none');
     shopping.style.display = 'none';
   } else {
     shoppingBag.style.display = "none";
@@ -308,3 +309,148 @@ leftBox.addEventListener("click", e => {
 });
 
 window.addEventListener("load", renderCart);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const shoppingBag = document.querySelector('.shoppingbag');
+  const shoppingBagCard = document.querySelector('.shoppingbagcard');
+  const continueBtn = shoppingBag.querySelector('button');
+  const continueWithBtn = shoppingBagCard.querySelector('.countinue');
+  const logo = document.querySelector('.homelogo')
+  const prcode = shoppingBag  .querySelector('.promo')
+  // Modal elementlarini olamiz
+  const modalbox = document.querySelector('.modal');
+  const closeModalBtn = modalbox.querySelector('.close-modal');
+
+  const shoppingBagSummary = shoppingBag.querySelector('.rightbox');
+  const shoppingBagCardSummary = shoppingBagCard.querySelector('.rightbox');
+  const cardsChildren = shoppingBagCard.querySelectorAll('.cardschild');
+
+  // Summaryni ko‘chirish funksiyasi
+  function copySummary() {
+    shoppingBagCardSummary.innerHTML = shoppingBagSummary.innerHTML;
+  }
+
+  // Radio buttonlar faqat bittasi tanlansin
+  cardsChildren.forEach(child => {
+    const input = child.querySelector('input[type="radio"]');
+    input.name = "payment-method";
+    input.addEventListener('change', () => {
+      cardsChildren.forEach(c => c.classList.remove('active'));
+      if (input.checked) {
+        child.classList.add('active');
+        const payName = child.querySelector('p').textContent.trim();
+        continueWithBtn.textContent = `Continue with ${payName}`;
+      }
+    });
+  });
+
+  // Boshlang'ich tanlov
+  if (cardsChildren.length > 0) {
+    const firstInput = cardsChildren[0].querySelector('input[type="radio"]');
+    firstInput.checked = true;
+    cardsChildren[0].classList.add('active');
+    const firstPayName = cardsChildren[0].querySelector('p').textContent.trim();
+    continueWithBtn.textContent = `Continue with ${firstPayName}`;
+  }
+
+  // Continue tugmasi bosilganda
+  continueBtn.addEventListener('click', () => {
+    copySummary();
+    prcode.style.display = 'none'
+
+
+    shoppingBag.style.display = 'none';
+    shoppingBagCard.style.display = 'block';
+
+    // Boshqa sahifalarni yashirish
+    fifthboparent.style.display = 'none';
+    firstboxparent.style.display = 'none';
+    homeparent.style.display = 'none';
+    secondboxparent.style.display = 'none';
+    thirdboxparent.style.display = 'none';
+    fourthboxparent.style.display = 'none';
+    allClothingParent.style.display = 'none';
+    prcode.style.display = 'none'
+  });
+  function copySummary() {
+    const summaryContent = shoppingBagSummary.cloneNode(true);
+    // promo input va statusIconni olib tashlaymiz
+    const promo = summaryContent.querySelector('.promo');
+    const status = summaryContent.querySelector('.status-icon');
+    if (promo) promo.remove();
+    if (status) status.remove();
+
+    shoppingBagCardSummary.innerHTML = '';
+    shoppingBagCardSummary.appendChild(summaryContent);
+}
+
+  logo.addEventListener('click',()=>{
+     shoppingBagCard.style.display = 'none';
+  })
+
+  // Continue with tugmasi bosilganda modal ko‘rsatilsin
+  continueWithBtn.addEventListener('click', () => {
+    copySummary();
+    modalbox.style.display = 'flex'; // ayno ochiladi
+  });
+
+  // Close tugmasi bosilganda modal yopilsin
+  closeModalBtn.addEventListener('click', () => {
+    modalbox.style.display = 'none';
+  });
+  
+});
+const promoInput = document.querySelector('.promo');
+    const statusIcon = document.querySelector('.status-icon');
+
+    const subtotalElement = document.querySelector('.subtotal p');
+    const totalElement = document.querySelector('.total p');
+
+    let originalPrice = null;
+
+    // Narxni yuklangandan keyin saqlab olish (bir martalik)
+    function loadOriginalPrice() {
+        const rawText = subtotalElement.textContent.trim();
+        const price = parseFloat(rawText);
+
+        if (!isNaN(price)) {
+            originalPrice = price;
+        }
+    }
+
+    loadOriginalPrice(); // Sahifa yuklanganda chaqiramiz
+
+    promoInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            // Agar hali narx olinmagan bo‘lsa, qayta olamiz
+            if (originalPrice === null) {
+                loadOriginalPrice();
+            }
+
+            const enteredCode = promoInput.value.trim();
+
+            if (enteredCode === "shamsiddin09") {
+                const discountedPrice = (originalPrice * 0.8).toFixed(2); // 20% chegirma
+
+                subtotalElement.textContent = discountedPrice + " USD";
+                totalElement.textContent = discountedPrice + " USD";
+
+                statusIcon.textContent = "Sizning kodingiz tug'ri";
+                statusIcon.classList.add("success");
+                statusIcon.classList.remove("error");
+            } else {
+                subtotalElement.textContent = originalPrice.toFixed(2) + " USD";
+                totalElement.textContent = originalPrice.toFixed(2) + " USD";
+
+                statusIcon.textContent = "Uzr sizga chegirma yo'q";
+                statusIcon.classList.add("error");
+                statusIcon.classList.remove("success");
+            }
+        }
+    });
+
+    promoInput.addEventListener('input', () => {
+        statusIcon.textContent = "";
+    });
