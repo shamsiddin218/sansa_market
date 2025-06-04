@@ -8,6 +8,7 @@
     font-optical-sizing: auto;
 }
 
+
 .navparent {
     width: 100%;
     background-color: rgba(241, 253, 223, 1);
@@ -108,7 +109,9 @@
 .homeparent {
     width: 100%;
     margin-top: 65px;
-
+    .hidden{
+        display: none;
+    }
     .homebox {
         max-width: 1280px;
         margin: auto;

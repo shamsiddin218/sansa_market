@@ -132,9 +132,10 @@ likeBtns.forEach((btn, index) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const addButtons = document.querySelectorAll(" .add img");
+  const addButtons = document.querySelectorAll(".add img");
   const shop = document.querySelector(".shop");
   const homelogo = document.querySelector(".homelogo");
+  const mainImg = document.querySelector(".homeimgbox img");
 
   const sectionsToHide = [
     ".homeparent",
@@ -147,54 +148,59 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   addButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // Yashirish kerak bo'lganlarni yashiramiz
+    btn.addEventListener("click", (e) => {
+      const clothingCard = e.target.closest(".clothingcard");
+      const clothImg = clothingCard.querySelector(".cloth").getAttribute("src");
+
+      // Show selected product in shop image
+      if (mainImg) {
+        mainImg.setAttribute("src", clothImg);
+      }
+
+      // Yashirish
       sectionsToHide.forEach(selector => {
         const el = document.querySelector(selector);
         if (el) el.classList.add("hidden");
       });
-      clothingParent.style.display = 'none';
-      homeparent.style.display = 'none';
-      firstboxparent.style.display = 'none';
-      secondboxparent.style.display = 'none';
-      thirdboxparent.style.display = 'none';
-      fourthboxparent.style.display = 'none';
-      fifthboparent.style.display = 'none';
-      allClothingParent.style.display = 'none';
-      shop.style.display = 'none'
-      // Shop oynasini ko'rsatamiz
-      shop.style.display = "flex"; // yoki "block"
+      fifthboparent.style.display = 'none'
+      firstboxparent.style.display = 'none'
+      homeparent.style.display = 'none'
+      secondboxparent.style.display = 'none'
+      thirdboxparent.style.display = 'none'
+      fourthboxparent.style.display = 'none'
+      allClothingParent.style.display = 'none'
+      shop.style.display = "flex";
     });
   });
 
   homelogo.addEventListener("click", () => {
-    // Hammasini avvalgi holatga qaytaramiz
     sectionsToHide.forEach(selector => {
       const el = document.querySelector(selector);
       if (el) el.classList.remove("hidden");
     });
 
-    // Shop oynasini yashiramiz
     shop.style.display = "none";
-    shoppingBag.style.display = 'none'
+    shoppingBag.style.display = "none";
   });
+  
 });
-// JavaScript kodining yangilangan versiyasi:
 
-// --- Elementlarni tanlab olish ---
+// --- Cart funksionalligi ---
 const plusBtn = document.querySelector(".plus");
 const minusBtn = document.querySelector(".minus");
 const qtyDisplay = document.querySelector(".butbox h6");
 const addToCartBtn = document.querySelector(".addtocard");
 const cartIcon = document.querySelector(".savat");
-const cartCount = document.querySelector(".likecha"); // data-count uchun
-const cartBadge = document.querySelector(".cart-count"); // mahsulot soni uchun badge
+const cartCount = document.querySelector(".likecha");
+const cartBadge = document.querySelector(".cart-count");
 const shoppingBag = document.querySelector(".shoppingbag");
 const leftBox = document.querySelector(".leftbox");
 const subtotalEl = document.querySelector(".subtotal p");
 const totalEl = document.querySelector(".total p");
 const summaryCount = document.querySelector(".content");
-const shopping = document.querySelector('.shop')
+const shopping = document.querySelector('.shop');
+const mainImg = document.querySelector(".homeimgbox img");
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function updateQtyDisplay(qty) {
@@ -263,12 +269,12 @@ addToCartBtn.addEventListener("click", () => {
   const product = {
     title: "Black shirt",
     desc: "Description",
-    img: "./img/Shirt mockup concept with plain clothing.png",
+    img: mainImg.getAttribute("src"),
     price: 9.50,
     qty: qty
   };
 
-  const existing = cart.find(item => item.title === product.title);
+  const existing = cart.find(item => item.title === product.title && item.img === product.img);
   if (existing) {
     existing.qty += qty;
   } else {
@@ -280,29 +286,18 @@ addToCartBtn.addEventListener("click", () => {
   renderCart();
 });
 
-// Savat oynasini boshida yashirish
 shoppingBag.style.display = "none";
 
-// Faqat savat ikonkasini bosganda ochiladi
 cartIcon.addEventListener("click", () => {
-  
   if (shoppingBag.style.display === "none") {
     shoppingBag.style.display = "block";
-    clothingParent.style.display = 'none';
-      homeparent.style.display = 'none';
-      firstboxparent.style.display = 'none';
-      secondboxparent.style.display = 'none';
-      thirdboxparent.style.display = 'none';
-      fourthboxparent.style.display = 'none';
-      fifthboparent.style.display = 'none';
-      allClothingParent.style.display = 'none';
-      shopping.style.display='none'
+    document.querySelectorAll(".homeparent, .firstboxparent, .secondboxparent, .thirdboxparent, .fourthboxparent, .fifthboxparent, .allclothingparent").forEach(el => el.style.display = 'none');
+    shopping.style.display = 'none';
   } else {
     shoppingBag.style.display = "none";
   }
 });
 
-// Remove tugmasi ishlashi uchun delegation
 leftBox.addEventListener("click", e => {
   if (e.target.classList.contains("remove")) {
     const index = e.target.getAttribute("data-index");
@@ -312,5 +307,4 @@ leftBox.addEventListener("click", e => {
   }
 });
 
-// Sahifa yuklanganda ham cart holatini tiklash
 window.addEventListener("load", renderCart);
